@@ -1,0 +1,25 @@
+<configuration>
+
+    <!-- Console appender -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File appender -->
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.log</file> <!-- Relative to project root or absolute path -->
+        <append>true</append> <!-- true = append to file; false = overwrite -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger config -->
+    <root level="INFO">
+        <appender-ref ref="console" />
+        <appender-ref ref="fileAppender" />
+    </root>
+
+</configuration>
