@@ -68,8 +68,8 @@ public class SecurityConfig {
     	//return NoOpPasswordEncoder.getInstance();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return customUserDetailsService;
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        return customUserDetailsService;
+//    }
 }

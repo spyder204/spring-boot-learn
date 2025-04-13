@@ -4780,3 +4780,15 @@ java.lang.StackOverflowError: null
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:216)
+2025-04-12 19:03:44 INFO  c.e.S.controller.LoginController - login page ----
+2025-04-12 19:03:51 INFO  c.e.S.s.CustomUserDetailsService - entering loadUserByUsername
+2025-04-12 19:03:51 INFO  c.e.S.s.CustomUserDetailsService - User found: kappu
+2025-04-12 19:03:51 INFO  c.e.S.s.CustomUserDetailsService - Encoded password from DB: $2a$10$ieJ6jfHXcoaB6tqNJW/aVO3ZpRLz1oT.hng4NhjNfyqUkhib2IKGS
+2025-04-12 23:19:54 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h46m44s650ms600µs500ns).
+2025-04-12 23:33:52 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m27s367ms620µs).
+2025-04-13 03:33:55 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h2s134ms259µs400ns).
+2025-04-13 07:19:54 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h45m58s472ms837µs700ns).
+2025-04-13 07:34:49 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m25s85ms55µs900ns).
+2025-04-13 10:57:49 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h29s875ms976µs600ns).
+2025-04-13 14:57:57 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h7s827ms460µs500ns).
+2025-04-13 16:47:57 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m59s408ms212µs700ns).
