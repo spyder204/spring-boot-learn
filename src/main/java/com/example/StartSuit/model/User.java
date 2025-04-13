@@ -13,7 +13,17 @@ public class User {
 
     private String password;
 
+    private boolean admin;
+    
     private String role;
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public String getUsername() {
 		return username;
@@ -31,13 +41,15 @@ public class User {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
+	public boolean isAdmin() {
+		return admin;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
+
+
 
     // Getters and setters
 }

@@ -22,17 +22,19 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	public void registerNewUser(RegisterDto registerDto) {
+	public void registerNewUser(RegisterDto userDto) {
 		User user = new User();
 
 		// Set username and encoded password
-		user.setUsername(registerDto.getUsername());
-		user.setPassword(passwordEncoder.encode(registerDto.getPassword())); // encode for security
+		user.setUsername(userDto.getUsername());
+		user.setPassword(passwordEncoder.encode(userDto.getPassword())); // encode for security
+		user.setAdmin(userDto.isAdmin());
 		
-		if(registerDto.getPassword().equals("99999"))
-			user.setRole("AVENGER");
+		
+		if(user.isAdmin())
+			user.setRole("ADMIN");
 		else
-			user.setRole("NPC (lame ass)");
+			user.setRole("USER");
 
 		// Save the user entity to DB
 		userRepository.save(user);
