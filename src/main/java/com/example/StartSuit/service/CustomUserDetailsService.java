@@ -31,13 +31,16 @@ public class CustomUserDetailsService implements UserDetailsService{
       
         logger.info("User found: {}", user.getUsername());
         logger.info("Encoded password from DB: {}", user.getPassword());
+       
+        UserDetails userDet= org.springframework.security.core.userdetails.User.builder()
+                .username(user.getUsername())
+                .password(user.getPassword()) // password must be encoded in DB
+                .roles(user.getRole()) // example: "USER"
+                .build();
         
+        logger.info("userDet.getUsername {}", userDet.getUsername());
         
-        return org.springframework.security.core.userdetails.User.builder()
-            .username(user.getUsername())
-            .password(user.getPassword()) // password must be encoded in DB
-            .roles(user.getRole()) // example: "USER"
-            .build();
+        return userDet;
         
         
 	}

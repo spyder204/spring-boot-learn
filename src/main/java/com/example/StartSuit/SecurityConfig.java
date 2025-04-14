@@ -17,6 +17,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import com.example.StartSuit.service.CustomUserDetailsService;
 
+import handler.CustomLoginSuccessHandler;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -33,12 +35,16 @@ public class SecurityConfig {
     	
         http
             .authorizeHttpRequests(auth -> auth
+            	.requestMatchers("/admin/**").hasRole("ADMIN")
+            	.requestMatchers("/user/**").hasRole("USER")
                 .requestMatchers("/login", "/error", "/register", "/css/**").permitAll()
                 .anyRequest().authenticated()
+                
             )
             .formLogin(form -> form
                 .loginPage("/login")
-                .defaultSuccessUrl("/home", true)
+                .successHandler(new CustomLoginSuccessHandler()) 
+               // .defaultSuccessUrl("/home", true)
                 .failureUrl("/login?error=true")
                 .permitAll()
             )
